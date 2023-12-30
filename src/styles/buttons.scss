@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block rounded border border-transparent px-3 py-2 font-semibold capitalize transition text-xl;
+  @apply inline-block rounded border border-transparent px-3 py-2 font-semibold capitalize transition text-sm lg:text-xl;
 }
 
 .btn-sm {

@@ -41,8 +41,7 @@ useEffect(() => {
   return () => window.removeEventListener('resize', handleResize);
 }, []);
 
-const isSmallDevice = windowWidth < 768; // Example breakpoint for small devices
-
+const isSmallDevice = windowWidth < 768; 
 const logoStyle = {
   height: isSmallDevice ? '22px' : logo_height.replace("px", "") + "px",
   width: isSmallDevice ? '153px' : logo_width.replace("px", "") + "px",

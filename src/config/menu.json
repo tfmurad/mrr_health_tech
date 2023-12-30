@@ -108,12 +108,87 @@
   ],
   "footer": [
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Review Services",
+      "pages": [
+        {
+          "page": "Medical Chronology",
+          "url": "#"
+        },
+        {
+          "page": "Narrtive Summary",
+          "url": "#"
+        },
+        {
+          "page": "Demand Letter",
+          "url": "#"
+        },
+        {
+          "page": "Expert Medical",
+          "url": "#"
+        },
+        {
+          "page": "Opinion",
+          "url": "#"
+        },
+        {
+          "page": "Billing Summary",
+          "url": "#"
+        },
+        {
+          "page": "Deposition Summary",
+          "url": "#"
+        }
+      ]
     },
     {
-      "name": "Privacy Policy",
-      "url": "/privacy-policy"
+      "name": "Quick Links",
+      "pages": [
+        {
+          "page": "About",
+          "url": "/about"
+        },
+        {
+          "page": "Expertise",
+          "url": "/expertise"
+        },
+        {
+          "page": "Upload Your Case",
+          "url": "/upload-your-case"
+        },
+        {
+          "page": "Blogs",
+          "url": "/blogs"
+        },
+        {
+          "page": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "page": "Terms and Conditions",
+          "url": "/terms-and-conditions"
+        },
+        {
+          "page": "FAQ",
+          "url": "/faq"
+        }
+      ]
+    },
+    {
+      "name": "Company",
+      "pages": [
+        {
+          "page": "+15302400250",
+          "url": "/jamstack-chat"
+        },
+        {
+          "page": "support@medicalrecordsreview.com",
+          "url": "/jamstack-ecommerce"
+        },
+        {
+          "page": "51 Pleasant St, 1118 Malden, MA 02148 United States",
+          "url": "/jamstack-cms"
+        }
+      ]
     }
   ]
 }
