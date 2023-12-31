@@ -6,7 +6,7 @@
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_darkmode": "/images/logo.png",
     "logo_width": "404",
     "logo_height": "56",
     "logo_text": "Nextplate"
@@ -22,7 +22,8 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Copyright © 2023, All rights reserved. Powered by MRR Health Tech.",
+    "footer_description": "At our company, we pride ourselves on being the leading provider of exceptional medical records. At our company, we pride ourselves on being the leading provider of exceptional medical records."
   },
 
   "navigation_button": {

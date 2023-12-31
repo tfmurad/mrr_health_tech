@@ -4,9 +4,9 @@ import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
-import { Button, Feature } from "@/types";
+import { Button, Feature, HomepageBlogs } from "@/types";
 import Link from "next/link";
-import { FaCheck } from "react-icons/fa/index.js";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
@@ -15,50 +15,58 @@ const Home = () => {
   const { frontmatter } = homepage;
   const {
     banner,
-    features,
+    homepage_blogs,
   }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
-    features: Feature[];
+    banner: {
+      title: string;
+      tag_line: string;
+      image: string;
+      content?: string;
+      button?: Button;
+    };
+    homepage_blogs: HomepageBlogs[];
   } = frontmatter;
 
+  console.log(homepage_blogs)
   return (
     <>
       <SeoMeta />
-      <section className="section pt-14">
-        <div className="container">
-          <div className="row justify-center">
-            <div className="mb-16 text-center lg:col-7">
-              <h1
-                className="mb-4"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
-              />
-              <p
-                className="mb-8"
-                dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-              />
-              {banner.button!.enable && (
-                <Link className="btn btn-primary" href={banner.button!.link}>
-                  {banner.button!.label}
-                </Link>
-              )}
-            </div>
-            {banner.image && (
-              <div className="col-12">
-                <ImageFallback
-                  src={banner.image}
-                  className="mx-auto"
-                  width="800"
-                  height="420"
-                  alt="banner image"
-                  priority
+      <section
+        style={{ backgroundImage: `url(${banner.image})` }}
+        className="bg-cover bg-center bg-no-repeat"
+      >
+        <div className="section">
+          <div className="container-lg">
+            <div className="row">
+              <div className="col-6">
+                <p
+                  className="mb-4 bg-primary font-semibold h5 text-dark rounded-full inline-block px-6 py-2"
+                  dangerouslySetInnerHTML={markdownify(banner.tag_line ?? "")}
                 />
+                <h1
+                  className="mb-6 text-white"
+                  dangerouslySetInnerHTML={markdownify(banner.title)}
+                />
+                <p
+                  className="mb-10 text-white"
+                  dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
+                />
+                {banner.button && banner.button.enable && (
+                  <Link
+                    className="btn btn-primary px-12 py-6"
+                    href={banner.button.link}
+                  >
+                    <span>{banner.button.label}</span>
+                    <FaArrowRightLong className="ml-2 inline-block" />
+                  </Link>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
 
-      {features.map((feature, index: number) => (
+      {/* {features.map((feature, index: number) => (
         <section
           key={index}
           className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
@@ -110,7 +118,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-      ))}
+      ))} */}
 
       <Testimonials data={testimonial} />
       <CallToAction data={callToAction} />

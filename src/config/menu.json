@@ -178,15 +178,18 @@
       "pages": [
         {
           "page": "+15302400250",
-          "url": "/jamstack-chat"
+          "url": "tel:+15302400250",
+          "icon": "FaPhone"
         },
         {
           "page": "support@medicalrecordsreview.com",
-          "url": "/jamstack-ecommerce"
+          "url": "mailto:support@medicalrecordsreview.com",
+          "icon": "FaEnvelope"
         },
         {
           "page": "51 Pleasant St, 1118 Malden, MA 02148 United States",
-          "url": "/jamstack-cms"
+          "url": "https://maps.google.com/?q=51 Pleasant St, 1118 Malden, MA 02148 United States",
+          "icon": "FaLocationDot"
         }
       ]
     }

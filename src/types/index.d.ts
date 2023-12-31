@@ -45,13 +45,12 @@ export type Author = {
   slug?: string;
 };
 
-export type Feature = {
-  button: button;
+export type HomepageBlogs = {
+  button: Button;
   image: string;
-  bulletpoints: string[];
   content: string;
   title: string;
-};
+}
 
 export type Testimonial = {
   name: string;
@@ -72,4 +71,5 @@ export type Button = {
   enable: boolean;
   label: string;
   link: string;
+  icon?: string;
 };

@@ -43,7 +43,7 @@ const Header = () => {
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
     >
-      <nav className="navbar container relative">
+      <nav className="navbar container-lg relative">
         {/* logo */}
         <div className="order-3 lg:order-1 max-lg:mt-5">
           <Logo />

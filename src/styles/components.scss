@@ -1,6 +1,6 @@
 // section style
 .section {
-  @apply py-24 xl:py-28;
+  @apply py-24 xl:py-[120px];
   &-sm {
     @apply py-16 xl:py-20;
   }
@@ -8,7 +8,11 @@
 
 // container
 .container {
-  @apply mx-auto max-w-[1520px] px-4;
+  @apply mx-auto max-w-[1320px] px-4;
+}
+
+.container-lg {
+  @apply mx-auto max-w-[1500px] px-4;
 }
 
 // form style
@@ -27,6 +31,19 @@
     @apply inline-block;
     a {
       @apply flex h-8 w-8 items-center justify-center rounded-full bg-primary text-center leading-9 text-dark;
+      svg {
+        @apply h-4 w-4;
+      }
+    }
+  }
+}
+
+.social-icons-square {
+  @apply space-x-2;
+  li {
+    @apply inline-block;
+    a {
+      @apply flex h-8 w-8 items-center justify-center rounded-md bg-primary text-center leading-9 text-dark;
       svg {
         @apply h-4 w-4;
       }
