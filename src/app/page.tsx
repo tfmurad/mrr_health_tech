@@ -1,10 +1,11 @@
+import HomeBlogCard from "@/components/HomeBlogCard";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
-import { Button, Feature, HomepageBlogs } from "@/types";
+import { Blog, Button, HomepageBlogs } from "@/types";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -24,15 +25,16 @@ const Home = () => {
       content?: string;
       button?: Button;
     };
-    homepage_blogs: HomepageBlogs[];
+    homepage_blogs: HomepageBlogs;
   } = frontmatter;
 
-  console.log(homepage_blogs)
   return (
     <>
       <SeoMeta />
       <section
-        style={{ backgroundImage: `url(${banner.image})` }}
+        style={{
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url(${banner.image})`,
+        }}
         className="bg-cover bg-center bg-no-repeat"
       >
         <div className="section">
@@ -66,59 +68,33 @@ const Home = () => {
         </div>
       </section>
 
-      {/* {features.map((feature, index: number) => (
-        <section
-          key={index}
-          className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
-        >
+      {homepage_blogs.enable && (
+        <section className="section">
           <div className="container">
-            <div className="row items-center justify-between">
-              <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
-              >
-                <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                />
-              </div>
-              <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
-              >
+            <div className="row">
+              <div className="mx-auto mb-12 text-center md:col-10 lg:col-8 xl:col-5">
                 <h2
+                  dangerouslySetInnerHTML={markdownify(homepage_blogs.title)}
                   className="mb-4"
-                  dangerouslySetInnerHTML={markdownify(feature.title)}
                 />
                 <p
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
+                  dangerouslySetInnerHTML={markdownify(
+                    homepage_blogs.sub_title ?? "",
+                  )}
                 />
-                <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                </ul>
-                {feature.button.enable && (
-                  <Link
-                    className="btn btn-primary mt-5"
-                    href={feature.button.link}
-                  >
-                    {feature.button.label}
-                  </Link>
-                )}
+              </div>
+
+              <div className="row">
+                {homepage_blogs.blogs.map((blog: Blog, i: number) => (
+                  <div key={i} className="col-4">
+                    <HomeBlogCard blog={blog} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
-      ))} */}
+      )}
 
       <Testimonials data={testimonial} />
       <CallToAction data={callToAction} />

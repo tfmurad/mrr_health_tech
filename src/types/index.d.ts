@@ -1,3 +1,6 @@
+import { CommentEmbed } from "disqus-react";
+import { ComponentType } from "react";
+
 export type RegularPage = {
   frontmatter: {
     title: string;
@@ -46,10 +49,17 @@ export type Author = {
 };
 
 export type HomepageBlogs = {
-  button: Button;
+  enable: boolean;
+  title: string;
+  sub_title?: string;
+  blogs: Blog[];
+};
+
+export type Blog ={
+  title: string;
   image: string;
   content: string;
-  title: string;
+  button: Button;
 }
 
 export type Testimonial = {
@@ -71,5 +81,5 @@ export type Button = {
   enable: boolean;
   label: string;
   link: string;
-  icon?: string;
+  icon?: ComponentType;
 };

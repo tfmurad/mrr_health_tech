@@ -4,12 +4,14 @@ import { ComponentType } from "react";
 const Button = ({
   label,
   link,
+  className,
   style,
   Icon,
   rel,
 }: {
   label: string;
   link: string;
+  className?: string;
   style?: string;
   Icon?: ComponentType;
   rel?: string;
@@ -21,7 +23,7 @@ const Button = ({
       rel={`noopener noreferrer ${
         rel ? (rel === "follow" ? "" : rel) : "nofollow"
       }`}
-      className={`btn no-underline flex items-center gap-x-2 lg:px-[30px] lg:py-[15px] ${
+      className={`btn no-underline flex items-center gap-x-2 ${className} ${
         style === "outline" ? "btn-outline-primary" : "btn-primary"
       }`}
     >

@@ -68,6 +68,7 @@ const Header = () => {
             <Button
               label={navigation_button.label}
               link={navigation_button.link}
+              className="lg:px-[30px] lg:py-[15px]"
               Icon={FaArrowRightLong}
             />
           )}
